@@ -1,4 +1,4 @@
-local player = game.Players.LocalPlayer
+local player = game.Players
 local LocalPlayer = player.LocalPlayer
 local UIS = game:GetService("UserInputService")
 
@@ -12,3 +12,5 @@ game.Workspace.Gravity = 196.2
 end
 
 player.Chatted:Connect(onChat)
+
+UIS.JumpRequest:Connect(onJump)
