@@ -13,6 +13,6 @@ function onJump()
 game.Workspace.Gravity = 196.2
 end
 
-player.Chatted:Connect(onChat)
+LocalPlayer.Chatted:Connect(onChat)
 
 UIS.JumpRequest:Connect(onJump)
