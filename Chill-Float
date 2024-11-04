@@ -7,6 +7,7 @@ if message == "/e f" then
 game.Workspace.Gravity = 0
 game.Players.LocalPlayer.Character.Humanoid.Sit = true
 end
+end
 
 function onJump()
 game.Workspace.Gravity = 196.2
