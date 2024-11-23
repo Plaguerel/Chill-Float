@@ -1,21 +1,27 @@
-local player = game.Players
-local LocalPlayer = player.LocalPlayer
+local player = game.Players.LocalPlayer
 local UIS = game:GetService("UserInputService")
 
-function onChat()
-  if message == "/e f" then
-game.Workspace.Gravity = 0
-game.Players.LocalPlayer.Character.Humanoid.Sit = true
-  end
+local originalGravity = game.Workspace.Gravity
+
+function float()
+    player.Character.Humanoid.Sit = true
+    game.Workspace.Gravity = 0
 end
 
-function onJump()
-game.Workspace.Gravity = 196.2
+function unfloat()
+    player.Character.Humanoid.Sit = false
+    game.Workspace.Gravity = originalGravity
 end
 
-LocalPlayer.Chatted:Connect(onChat)
+player.Chatted:Connect(function(message)
+    if message:lower() == "/e f" then
+        float()
+    end
+end)
 
-UIS.JumpRequest:Connect(onJump)
+UIS.JumpRequest:Connect(function()
+    unfloat()
+end)
 
 print("({[]})({[]})({[]})({[]})({[]})({[]})({[]})")
 print("Made By Plague (or plague.1 on discord")
